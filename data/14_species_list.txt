@@ -1,0 +1,14 @@
+Alkalihalobacillus_halodurans
+Clostridium_kluyveri
+Cyanobacterium_sp._HL-69
+Escherichia_coli_ER2796
+Geobacter_sulfurreducens
+Pseudothermotoga_lettingae_TMO
+Rhodococcus_jostii_RHA1
+Shewanella_putrefaciens
+Staphylococcus_epidermidis_RP62A
+Synechocystis_sp._PCC_6803
+Thermoflexus_hugenholtzii
+Thioalkalivibrio_sp._K90mix
+Vibrio_cincinnatiensis
+Yersinia_pseudotuberculosis
