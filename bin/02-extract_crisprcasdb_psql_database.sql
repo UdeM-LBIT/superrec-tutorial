@@ -5,6 +5,7 @@
 ---------
 -- Get raw tables of ccpp20220414
 ---------
+\! mkdir -p ./data/raw_tables_ccpp20220414
 \echo 'Store table area in "./data/raw_tables_ccpp20220414/area"'
 \o ./data/raw_tables_ccpp20220414/area.txt
 SELECT * FROM area;
