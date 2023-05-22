@@ -143,6 +143,11 @@ CROSS JOIN temptable3
 -- Drop "temptable3" table
 DROP TABLE temptable3;
 
+-- Remove newlines in field values
+UPDATE crisprcasdataset SET
+    strain_name = regexp_replace(strain_name, E'\n', '', 'gn'),
+    refseq = regexp_replace(refseq, E'\n', '', 'gn');
+
 -- Store "crisprcasdataset" table in CSV file 'crisprcas_dataset.csv' 
 \copy crisprcasdataset TO './data/crisprcas_dataset.csv' DELIMITER '~' CSV
 -- Drop "crisprcasdataset" table
