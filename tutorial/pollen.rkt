@@ -1,7 +1,6 @@
 #lang racket
 (require
   racket/file
-  gregor
   pollen/core pollen/decode pollen/tag pollen/pagetree
   txexpr)
 
