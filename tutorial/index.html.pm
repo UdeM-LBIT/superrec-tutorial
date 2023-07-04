@@ -25,14 +25,26 @@ If needed, refer to one the following webpages for instructions on how to instal
     ◊li{◊out-link["https://docs.docker.com/desktop/install/windows-install/"]{Windows instructions}}
 }
 
-Next, run the following command from a terminal to start the container.
+Next, download the container image (about 370 MB).
+
+◊highlight['console]{
+    $ docker pull ghcr.io/udem-lbit/superrec-tutorial:latest
+}
+
+Finally, run the following command from a terminal to start the container.
 Replace ◊tt{<DATA_PATH>} with the path to a folder on your machine where you want to store the results of the tutorial
 (e.g., ◊tt{/home/user/superrec-data} or ◊tt{C:\superrec-data}).
 
 ◊highlight['console]{
     $ docker run -it --name reconciliation \
-        --mount=type=bind,src=<DATA_PATH>,dest=/home/tts/data \
-        superrec-tutorial
+        --mount=type=bind,src=<DATA_PATH>,dst=/home/tts/data \
+        ghcr.io/udem-lbit/superrec-tutorial
+}
+
+If at any point you leave the container (e.g., by closing the terminal), you can get back in with the following command.
+
+◊highlight['console]{
+    $ docker start -i reconciliation
 }
 
 If you prefer not to use Docker, you can also manually install the required tools:
