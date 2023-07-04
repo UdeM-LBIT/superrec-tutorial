@@ -1,6 +1,7 @@
 /.penv
 /.venv
 /data
+/data_ref
 /public
 /tutorial/**/*.html
 /tutorial/**/*.xml
