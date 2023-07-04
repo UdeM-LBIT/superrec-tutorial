@@ -1,7 +1,0 @@
-Archaeoglobus_fulgidus
-Candidatus_Heimdallarchaeota_archaeon_PR6
-Candidatus_Heimdallarchaeota_archaeon_PM71
-Candidatus_Micrarchaeota_archaeon
-Methanothermobacter_thermautotrophicus_str._Delta_H
-Pyrococcus_furiosus
-Thermofilum_pendens_Hrk_5

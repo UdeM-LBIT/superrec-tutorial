@@ -1,0 +1,492 @@
+/** Fonts **/
+
+@font-face
+{
+    font-family: "IBM Plex Sans";
+    src: local("IBM Plex Sans"), local("IBMPlexSans-Regular"),
+         url("fonts/ibmplex/IBMPlexSans-Regular.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexSans-Regular.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexSans-Regular.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Sans";
+    font-weight: bold;
+    src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"),
+         url("fonts/ibmplex/IBMPlexSans-Bold.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexSans-Bold.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexSans-Bold.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Sans";
+    font-style: italic;
+    src: local("IBM Plex Sans Italic"), local("IBMPlexSans-Italic"),
+         url("fonts/ibmplex/IBMPlexSans-Italic.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexSans-Italic.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexSans-Italic.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Sans";
+    font-weight: bold;
+    font-style: italic;
+    src: local("IBM Plex Sans Bold Italic"), local("IBMPlexSans-BoldItalic"),
+         url("fonts/ibmplex/IBMPlexSans-BoldItalic.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexSans-BoldItalic.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexSans-BoldItalic.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Mono";
+    src: local("IBM Plex Mono"), local("IBMPlexMono-Regular"),
+         url("fonts/ibmplex/IBMPlexMono-Regular.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexMono-Regular.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexMono-Regular.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Mono";
+    font-weight: bold;
+    src: local("IBM Plex Mono Bold"), local("IBMPlexMono-Bold"),
+         url("fonts/ibmplex/IBMPlexMono-Bold.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexMono-Bold.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexMono-Bold.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Mono";
+    font-style: italic;
+    src: local("IBM Plex Mono Italic"), local("IBMPlexMono-Italic"),
+         url("fonts/ibmplex/IBMPlexMono-Italic.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexMono-Italic.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexMono-Italic.otf") format("otf");
+}
+
+@font-face
+{
+    font-family: "IBM Plex Mono";
+    font-weight: bold;
+    font-style: italic;
+    src: local("IBM Plex Mono Bold Italic"), local("IBMPlexMono-BoldItalic"),
+         url("fonts/ibmplex/IBMPlexMono-BoldItalic.woff2") format("woff2"),
+         url("fonts/ibmplex/IBMPlexMono-BoldItalic.woff") format("woff"),
+         url("fonts/ibmplex/IBMPlexMono-BoldItalic.otf") format("otf");
+}
+
+/** General **/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    --background-color: #fbfbfb;
+    --highlight-color: rgba(0, 0, 0, 0.05);
+    --text-color: #032026;
+    --text-secondary: #8092a8;
+    --text-sans: "IBM Plex Sans", sans-serif;
+    --text-mono: "IBM Plex Mono", monospace;
+    --base-size: 19px;
+    --base-height: 27px;
+    --border-radius: 5px;
+
+    background: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--text-sans);
+    font-size: var(--base-size);
+    line-height: var(--base-height);
+}
+
+body {
+    max-width: 790px;
+    padding: 0 var(--base-height);
+    margin: calc(4 * var(--base-height)) auto;
+}
+
+p {
+    margin: var(--base-height) 0;
+}
+
+p.standout {
+    background-color: var(--highlight-color);
+    padding: var(--base-height);
+    border-radius: var(--border-radius);
+}
+
+a {
+    color: inherit;
+    transition: background-color ease-out .05s;
+    border-radius: var(--border-radius);
+
+    text-decoration-color: var(--text-secondary);
+    text-underline-offset: 3px;
+    text-underline-position: from-font;
+    text-decoration-thickness: from-font;
+}
+
+a:focus {
+    background-color: var(--highlight-color);
+    outline: 2px solid currentColor;
+}
+
+:is(h1, h2, h3, h4, h5, h6) > a
+{
+    text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6) > a:hover::before
+{
+    content: "#";
+    color: var(--text-secondary);
+
+    display: inline-block;
+    width: var(--base-height);
+    margin-left: calc(-1 * var(--base-height));
+}
+
+.code, tt, pre {
+    font-family: var(--text-mono);
+    font-size: 0.9rem;
+}
+
+hr {
+    border: none;
+    margin: var(--base-height) 0;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: calc(2.5 * var(--base-height)) 0 calc(1.66 * var(--base-height)) 0;
+}
+
+h2 {
+    font-size: 1.3rem;
+    margin: calc(3 * var(--base-height)) 0 calc(1.33 * var(--base-height)) 0;
+    border-top: 1px solid var(--text-color);
+    padding-top: var(--base-height);
+}
+
+h3 {
+    font-size: 1.05rem;
+    font-style: italic;
+    margin: calc(1.5 * var(--base-height)) 0 var(--base-height) 0;
+}
+
+.long-list > li {
+    margin-bottom: 1rem;
+}
+
+.long-list p:last-of-type {
+    margin-bottom: 0;
+}
+
+dd {
+    margin-bottom: 1rem;
+}
+
+dd:last-of-type {
+    margin-bottom: 0;
+}
+
+/** Structure **/
+
+body > header {
+    margin-bottom: calc(2 * var(--base-height));
+}
+
+body > header h2 {
+    margin: calc(-1 * var(--base-height)) 0 0 0;
+    border: 0;
+    padding: 0;
+
+    font-style: italic;
+    font-size: calc(1.2 * var(--base-size));
+    line-height: calc(1.2 * var(--base-height));
+}
+
+body > footer {
+    margin-top: calc(2 * var(--base-height));
+    font-style: italic;
+}
+
+/** Figures **/
+
+figure {
+    text-align: center;
+    margin: var(--base-height);
+}
+
+figcaption {
+    font-style: italic;
+}
+
+/** Math **/
+
+.MJX_HoverRegion {
+    background-color: transparent !important;
+}
+
+.MJX_LiveRegion {
+    background-color: transparent !important;
+}
+
+.MJX_ToolTip {
+    background-color: transparent !important;
+}
+
+/** Code **/
+
+.highlight {
+    background: var(--highlight-color);
+    padding: var(--base-height);
+    margin: var(--base-height) 0;
+    border-radius: var(--border-radius);
+}
+
+.highlight pre {
+    margin: 0;
+}
+
+.highlight .linenos { display: none }
+
+/*** Comment ***/
+.highlight .c { color: #8f5902; font-style: italic }
+
+/*** Error ***/
+.highlight .err { color: #a40000; border: 1px solid #ef2929 }
+
+/*** Generic ***/
+.highlight .g { color: #000000 }
+
+/*** Keyword ***/
+.highlight .k { color: #204a87 }
+
+/*** Literal ***/
+.highlight .l { color: #000000 }
+
+/*** Name ***/
+.highlight .n { color: #000000 }
+
+/*** Operator ***/
+.highlight .o { color: #ce5c00 }
+
+/*** Other ***/
+.highlight .x { color: #000000 }
+
+/*** Punctuation ***/
+.highlight .p { color: #000000 }
+
+/*** Comment.Hashbang ***/
+.highlight .ch { color: #8f5902; font-style: italic }
+
+/*** Comment.Multiline ***/
+.highlight .cm { color: #8f5902; font-style: italic }
+
+/*** Comment.Preproc ***/
+.highlight .cp { color: #8f5902; font-style: italic }
+
+/*** Comment.PreprocFile ***/
+.highlight .cpf { color: #8f5902; font-style: italic }
+
+/*** Comment.Single ***/
+.highlight .c1 { color: #8f5902; font-style: italic }
+
+/*** Comment.Special ***/
+.highlight .cs { color: #8f5902; font-style: italic }
+
+/*** Generic.Deleted ***/
+.highlight .gd { color: #a40000 }
+
+/*** Generic.Emph ***/
+.highlight .ge { color: #000000; font-style: italic }
+
+/*** Generic.Error ***/
+.highlight .gr { color: #ef2929 }
+
+/*** Generic.Heading ***/
+.highlight .gh { color: #000080; font-weight: bold }
+
+/*** Generic.Inserted ***/
+.highlight .gi { color: #00A000 }
+
+/*** Generic.Output ***/
+.highlight .go { color: #000000; font-style: italic }
+
+/*** Generic.Prompt ***/
+.highlight .gp { color: #8f5902; user-select: none }
+
+/*** Generic.Strong ***/
+.highlight .gs { color: #000000; font-weight: bold }
+
+/*** Generic.Subheading ***/
+.highlight .gu { color: #800080; font-weight: bold }
+
+/*** Generic.Traceback ***/
+.highlight .gt { color: #a40000; font-weight: bold }
+
+/*** Keyword.Constant ***/
+.highlight .kc { color: #204a87; font-weight: bold }
+
+/*** Keyword.Declaration ***/
+.highlight .kd { color: #204a87; font-weight: bold }
+
+/*** Keyword.Namespace ***/
+.highlight .kn { color: #204a87; font-weight: bold }
+
+/*** Keyword.Pseudo ***/
+.highlight .kp { color: #204a87; font-weight: bold }
+
+/*** Keyword.Reserved ***/
+.highlight .kr { color: #204a87; font-weight: bold }
+
+/*** Keyword.Type ***/
+.highlight .kt { color: #204a87; font-weight: bold }
+
+/*** Literal.Date ***/
+.highlight .ld { color: #000000 }
+
+/*** Literal.Number ***/
+.highlight .m { color: #0000cf; font-weight: bold }
+
+/*** Literal.String ***/
+.highlight .s { color: #4e9a06 }
+
+/*** Name.Attribute ***/
+.highlight .na { color: #c4a000 }
+
+/*** Name.Builtin ***/
+.highlight .nb { color: #204a87 }
+
+/*** Name.Class ***/
+.highlight .nc { color: #000000 }
+
+/*** Name.Constant ***/
+.highlight .no { color: #000000 }
+
+/*** Name.Decorator ***/
+.highlight .nd { color: #5c35cc; font-weight: bold }
+
+/*** Name.Entity ***/
+.highlight .ni { color: #ce5c00 }
+
+/*** Name.Exception ***/
+.highlight .ne { color: #cc0000; font-weight: bold }
+
+/*** Name.Function ***/
+.highlight .nf { color: #000000 }
+
+/*** Name.Label ***/
+.highlight .nl { color: #f57900 }
+
+/*** Name.Namespace ***/
+.highlight .nn { color: #000000 }
+
+/*** Name.Other ***/
+.highlight .nx { color: #000000 }
+
+/*** Name.Property ***/
+.highlight .py { color: #000000 }
+
+/*** Name.Tag ***/
+.highlight .nt { color: #204a87; font-weight: bold }
+
+/*** Name.Variable ***/
+.highlight .nv { color: #000000 }
+
+/*** Operator.Word ***/
+.highlight .ow { color: #204a87; font-weight: bold }
+
+/*** Text.Whitespace ***/
+.highlight .w { color: #f8f8f8 }
+
+/*** Literal.Number.Bin ***/
+.highlight .mb { color: #0000cf; font-weight: bold }
+
+/*** Literal.Number.Float ***/
+.highlight .mf { color: #0000cf; font-weight: bold }
+
+/*** Literal.Number.Hex ***/
+.highlight .mh { color: #0000cf; font-weight: bold }
+
+/*** Literal.Number.Integer ***/
+.highlight .mi { color: #0000cf; font-weight: bold }
+
+/*** Literal.Number.Oct ***/
+.highlight .mo { color: #0000cf; font-weight: bold }
+
+/*** Literal.String.Affix ***/
+.highlight .sa { color: #4e9a06 }
+
+/*** Literal.String.Backtick ***/
+.highlight .sb { color: #4e9a06 }
+
+/*** Literal.String.Char ***/
+.highlight .sc { color: #4e9a06 }
+
+/*** Literal.String.Delimiter ***/
+.highlight .dl { color: #4e9a06 }
+
+/*** Literal.String.Doc ***/
+.highlight .sd { color: #8f5902; font-style: italic }
+
+/*** Literal.String.Double ***/
+.highlight .s2 { color: #4e9a06 }
+
+/*** Literal.String.Escape ***/
+.highlight .se { color: #4e9a06 }
+
+/*** Literal.String.Heredoc ***/
+.highlight .sh { color: #4e9a06 }
+
+/*** Literal.String.Interpol ***/
+.highlight .si { color: #4e9a06 }
+
+/*** Literal.String.Other ***/
+.highlight .sx { color: #4e9a06 }
+
+/*** Literal.String.Regex ***/
+.highlight .sr { color: #4e9a06 }
+
+/*** Literal.String.Single ***/
+.highlight .s1 { color: #4e9a06 }
+
+/*** Literal.String.Symbol ***/
+.highlight .ss { color: #4e9a06 }
+
+/*** Name.Builtin.Pseudo ***/
+.highlight .bp { color: #3465a4 }
+
+/*** Name.Function.Magic ***/
+.highlight .fm { color: #000000 }
+
+/*** Name.Variable.Class ***/
+.highlight .vc { color: #000000 }
+
+/*** Name.Variable.Global ***/
+.highlight .vg { color: #000000 }
+
+/*** Name.Variable.Instance ***/
+.highlight .vi { color: #000000 }
+
+/*** Name.Variable.Magic ***/
+.highlight .vm { color: #000000 }
+
+/*** Literal.Number.Integer.Long ***/
+.highlight .il { color: #0000cf; font-weight: bold }

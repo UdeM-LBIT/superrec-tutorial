@@ -1,1 +1,7 @@
-data/*
+/.penv
+/.venv
+/data
+/public
+/tutorial/**/*.html
+/tutorial/**/*.xml
+/tutorial/**/compiled
